@@ -4,3 +4,4 @@ docker-compose.yml
 *.zip
 *.env
 *.example
+.node_modules
