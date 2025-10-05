@@ -22,6 +22,8 @@
     "daisyui": "^4.12.10",
     "autoprefixer": "^10.4.20",
     "postcss": "^8.4.40"
-  ,
-  "engines": {"node": ">=18"}
+  },
+  "engines": {
+    "node": ">=18"
+  }
 }
