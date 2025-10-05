@@ -1,8 +1,10 @@
 {
-  "buildCommand": "npm run build",
-  "outputDirectory": "dist",
-  "rootDir": "client",
+  "buildCommand": "cd client && npm install && npm run build",
+  "outputDirectory": "client/dist",
   "rewrites": [
-    { "source": "/api/:path*", "destination": "https://bookshop-api-er7t.onrender.com/api/:path*" }
+    {
+      "source": "/api/:path*",
+      "destination": "https://bookshop-api-er7t.onrender.com/api/:path*"
+    }
   ]
 }
