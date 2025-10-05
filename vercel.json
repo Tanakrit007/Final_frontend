@@ -1,0 +1,8 @@
+{
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "rootDir": "client",
+  "rewrites": [
+    { "source": "/api/:path*", "destination": "https://bookshop-api-er7t.onrender.com/api/:path*" }
+  ]
+}
