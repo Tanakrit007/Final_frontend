@@ -1,33 +1,29 @@
-import { createBrowserRouter } from 'react-router-dom'
-import MainLayout from '../layouts/MainLayout'
-import Home from '../pages/Home'
+// client/routes/router.jsx
+import React from "react";
+import { createBrowserRouter } from "react-router-dom";
+import MainLayout from "../layouts/MainLayout";
 
-import BooksList from '../pages/books/BooksList'
-import BookForm from '../pages/books/BookForm'
-import JournalsList from '../pages/journals/JournalsList'
-import JournalForm from '../pages/journals/JournalForm'
-import ComicsList from '../pages/comics/ComicsList'
-import ComicForm from '../pages/comics/ComicForm'
+// หน้าหลัก
+import Home from "../pages/Home";
 
-export default createBrowserRouter([
+// หน้ารวมต่อประเภท (CRUD ครบในหน้าเดียว)
+import Book from "../pages/books/Book";
+import Journal from "../pages/journals/Journal";
+import Comics from "../pages/comics/Comics";
+
+const router = createBrowserRouter([
   {
-    path: '/', element: <MainLayout />,
+    path: "/",
+    element: <MainLayout />,
     children: [
       { index: true, element: <Home /> },
 
-      { path: 'books', element: <BooksList /> },
-      { path: 'books/new', element: <BookForm /> },
-      { path: 'books/:id/edit', element: <BookForm /> },
+      // รวม CRUD หน้าเดียว
+      { path: "books", element: <Book /> },
+      { path: "journals", element: <Journal /> },
+      { path: "comics", element: <Comics /> },
+    ],
+  },
+]);
 
-      { path: 'journals', element: <JournalsList /> },
-      { path: 'journals/new', element: <JournalForm /> },
-      { path: 'journals/:id/edit', element: <JournalForm /> },
-
-      { path: 'comics', element: <ComicsList /> },
-      { path: 'comics/new', element: <ComicForm /> },
-      { path: 'comics/:id/edit', element: <ComicForm /> },
-
-      { path: '*', element: <div className="p-6"><h2>Not Found</h2></div> }
-    ]
-  }
-])
+export default router;
